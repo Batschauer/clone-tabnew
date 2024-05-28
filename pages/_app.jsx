@@ -1,5 +1,4 @@
 import "../styles/global.css";
-import type { AppProps } from "next/app";
 import { Playfair_Display } from "next/font/google";
 
 const playfairDisplay = Playfair_Display({
@@ -7,7 +6,7 @@ const playfairDisplay = Playfair_Display({
   display: "swap",
 });
 
-export default function Root({ Component, pageProps }: AppProps) {
+export default function Root({ Component, pageProps }) {
   return (
     <main className={playfairDisplay.className}>
       <Component {...pageProps} />
