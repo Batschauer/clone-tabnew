@@ -1,28 +1,24 @@
 :root {
-  --primary-100: #f1ece5;
-  --primary-200: #e4dacb;
-  --primary-300: #d7c7b1;
-  --primary-400: #c9b598;
-  --primary-500: #bca37f;
-  --primary-600: #8b785d;
-  --primary-700: #5d4f3c;
-  --primary-800: #322a1f;
-  --primary-900: #0d0a06;
-}
-
-* {
-  box-sizing: border-box;
+  --base: #dad3be;
+  --primary: #254336;
+  --secondary: #362524;
+  --highlight: #ffcc99;
+  --light-gray: #f0ead6;
+  --medium-gray: #b0a890;
+  --dark-gray: #524c40;
+  --light-green: #99a896;
+  --medium-green: #597a69;
 }
 
 body {
-  background-color: var(--primary-100);
+  background-color: var(--base);
   height: 100vh;
-  margin: 0;
-  padding: 0;
 }
 
 h1 {
-  color: var(--primary-900);
-  margin: 0;
-  padding: 0;
+  color: var(--medium-green);
+}
+
+a {
+  text-decoration: none;
 }
