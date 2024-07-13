@@ -1,3 +1,9 @@
+import orchestrator from "tests/orchestrator.js";
+
+beforeAll(async function () {
+  await orchestrator.waitForAllServices();
+});
+
 test("GET to /api/v1/status sould return 200", async function () {
   const result = await fetch("http://localhost:3000/api/v1/status");
   expect(result.status).toBe(200);
