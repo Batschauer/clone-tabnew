@@ -1,0 +1,1 @@
+npx infisical scan git-changes --staged --verbose --config ./.infisical-scan.toml

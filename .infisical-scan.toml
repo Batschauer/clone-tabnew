@@ -1,0 +1,27 @@
+title = "secret list"
+
+# This configuration is the foundation that can be expanded. If there are any overlapping rules
+# between this base and the expanded configuration, the rules in this base will take priority.
+# Another aspect of extending configurations is the ability to link multiple files, up to a depth of 2.
+# "Allowlist" arrays get appended and may have repeated elements.
+# "useDefault" and "path" cannot be used simultaneously. Please choose one.
+[extend]
+# useDefault will extend the base configuration with the default config:
+# https://raw.githubusercontent.com/Infisical/infisical/main/cli/config/infisical-scan.toml
+useDefault = true
+
+# An array of tables that contain information that define instructions
+# on how to detect secrets
+[[rules]]
+description = "Postgres Password"
+id = "postgress-password"
+regex = '''(?i)(?:^|\s|["'])((?:PG|POSTGRES(?:QL)?)_PASSWORD)\s*(?:=|:|":|"\s*:\s*|\s*=\s*|\s*:\s*)\s*["']?([^"'\s]+)["']?'''
+# Keywords are used for pre-regex check filtering.
+# If rule has keywords but the text fragment being scanned doesn't have at least one of it's keywords, it will be skipped for processing further.
+# Ideally these values should either be part of the identifier or unique strings specific to the rule's regex
+# (introduced in v8.6.0)
+keywords = [
+  "pg",
+	"postgres",
+  "password"
+]
